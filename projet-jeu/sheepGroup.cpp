@@ -153,8 +153,8 @@ int SheepGroup::count_moves_with_up_Priority(int priority,Game_Board & g_board )
                 count++;
         }
         if(g_board.valid_pos(moutons[i].get_Position().get_x()+1, moutons[i].get_Position().get_y()-1)){
-            if((max_left(i,g_board) &&!(max_down(i,g_board)) ||max_up(i,g_board))) {
-                if ((max_left(i,g_board))&&!(max_down(i,g_board)))
+            if((max_right(i,g_board) &&!(max_down(i,g_board)) ||max_up(i,g_board))) {
+                if ((max_right(i,g_board))&&!(max_down(i,g_board)))
                     count += priority;
                 if (max_up(i,g_board))
                     count += priority;
@@ -172,8 +172,8 @@ int SheepGroup::select_move_number(int random_moves, int priority,  Game_Board &
     int i = 0;
     while (valid >= 0){
         if(g_board.valid_pos(moutons[i].get_Position().get_x()+1, moutons[i].get_Position().get_y()+1)){
-            if((max_left(i,g_board) &&!(max_down(i,g_board)) ||max_up(i,g_board))) {
-                if ((max_left(i,g_board))&&!(max_down(i,g_board)))
+            if((max_right(i,g_board) &&!(max_down(i,g_board)) ||max_up(i,g_board))) {
+                if ((max_right(i,g_board))&&!(max_down(i,g_board)))
                     valid -= priority;
                 if (max_up(i,g_board))
                     valid -= priority;
